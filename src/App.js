@@ -17,6 +17,10 @@ function App() {
       <Header />
       <PaymentTabs />
       <AppointmentForm addAppointment={addAppointment} />
+    const deleteAppointment = (indexToDelete) => {
+  const newList = appointments.filter((_, index) => index !== indexToDelete);
+  setAppointments(newList);
+}
       <AppointmentList appointments={appointments} />
       <DailyTotal appointments={appointments} />
     </div>
