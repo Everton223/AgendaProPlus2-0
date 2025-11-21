@@ -16,7 +16,11 @@ function App() {
     <div className="container">
       <Header />
       <PaymentTabs />
-      <AppointmentForm addAppointment={addAppointment} />
+      <AppointmentList 
+  appointments={appointments} 
+  deleteAppointment={deleteAppointment}
+/>
+
     const deleteAppointment = (indexToDelete) => {
   const newList = appointments.filter((_, index) => index !== indexToDelete);
   setAppointments(newList);
