@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgendaPro+</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>AgendaPro+</h1>
+        <nav>
+            <button onclick="showTab('agenda')">Agenda</button>
+            <button onclick="showTab('novo')">Criar Agendamento</button>
+            <button onclick="showTab('pagamentos')">Pagamentos</button>
+        </nav>
+    </header>
+
+    <!-- ABA: AGENDA -->
+    <section id="agenda" class="tab visible">
+        <h2>Agendamentos de Hoje</h2>
+        <div id="listaAgendamentos"></div>
+    </section>
+
+    <!-- ABA: NOVO -->
+    <section id="novo" class="tab">
+        <h2>Novo Agendamento</h2>
+
+        <form id="formAgendamento">
+            <input type="time" id="horario" required>
+            <input type="date" id="data" required>
+            <input type="text" id="cliente" placeholder="Cliente">
+            <input type="text" id="servico" placeholder="Serviço">
+            <input type="number" id="valor" placeholder="Valor" required>
+            <select id="pagamento">
+                <option>Pix</option>
+                <option>Dinheiro</option>
+                <option>Cartão</option>
+            </select>
+
+            <button type="submit">Salvar</button>
+        </form>
+    </section>
+
+    <!-- ABA: PAGAMENTOS -->
+    <section id="pagamentos" class="tab">
+        <h2>Pagamentos</h2>
+        <div id="totalDia">Total do dia: R$ 0,00</div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
